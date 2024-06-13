@@ -216,6 +216,7 @@ function cadastrarPessoa(requisicao, resposta) {
                                                 <div class="mt-5 mb-5"><button class="btn btn-primary" id="submitButton"
                                                         type="submit">Cadastrar</button></div>
                                             </form>
+                                            <div class="mt-5 mb-5"><a href="/listarPessoas"><button class="btn btn-light">Listar Cadastrados</button></a></div>
                                         </div>
                                     </div>
                                 </div>
