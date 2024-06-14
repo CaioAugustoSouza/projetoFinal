@@ -48,16 +48,16 @@
                 <div class="col-md-10 col-lg-8 mx-auto text-center">
                     <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
                     <h2 class="text-white mb-5">Cadastre um pet para ser adotado</h2>
-                    <form class="form-signup" id="contactForm" action="/cadastrarpessoa">
+                    <form class="form-signup" id="contactForm" action="/cadastrarPet" method="POST">
                         <div class="row input-group-newsletter">
                             <div class="row mt-5 mb-5">
-                                <label class="meu-label" for="nome">Nome: </label>
-                                <input class="form-control" id="nome" type="text" name="nome"
+                                <label class="meu-label" for="nomePet">Nome: </label>
+                                <input class="form-control" id="nomePet" type="text" name="nomePet"
                                     placeholder="nome do pet..." />
                             </div>
-                            <dic class="row">
+                            <div class="row">
                                 <div class="col-sm mt-5 mb-5">
-                                    <label class="meu-label" for="nome">Raça: </label>
+                                    <label class="meu-label" for="raca">Raça: </label>
                                     <input class="form-control" id="raca" type="text" name="raca"
                                         placeholder="raça do pet..." />
                                 </div>
@@ -66,11 +66,12 @@
                                     <input class="form-control" id="idade" type="number" placeholder="idade do pet..."
                                         name="idade" />
                                 </div>
-                            </dic>
+                            </div>
                         </div>
                         <div class="mt-5 mb-5"><button class="btn btn-primary" id="submitButton"
                                 type="submit">Cadastrar</button></div>
                     </form>
+                    <div class="mt-5 mb-5"><a href="/listarPets"><button class="btn btn-light">Listar Pets</button></a></div>
                 </div>
             </div>
         </div>
