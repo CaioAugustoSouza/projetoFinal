@@ -18,9 +18,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 app.use(session({
-    secret: 'sercetKey',
-    resave: true,
-    saveUninitialized: true,
+    secret: 'MySecretStrongKey',
+    resave: false,
+    saveUninitialized: false,
     cookie: {
         maxAge: 1000 * 60 * 30
     }
@@ -46,7 +46,7 @@ function usuarioEstaAutenticado(requisicao, resposta, next) {
 function autenticarUsuario(requisicao, resposta) {
     const usuario = requisicao.body.usuario;
     const senha = requisicao.body.senha;
-    if (usuario == '123' && senha == '100200') {
+    if (usuario == '123456' && senha == '102030') {
         requisicao.session.usuarioAutenticado = true;
         resposta.cookie('dataUltimoAcesso', new Date().toLocaleString(), {
             httpOnly: true,
