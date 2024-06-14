@@ -19,10 +19,10 @@ app.use(cookieParser());
 
 app.use(session({
     secret: 'MySecretStrongKey',
-    resave: false,
-    saveUninitialized: false,
+    resave: true,
+    saveUninitialized: true,
     cookie: {
-        maxAge: 1000 * 60 * 30
+        maxAge: 1000*60*30
     }
 }));
 
@@ -250,9 +250,9 @@ function cadastrarPessoa(requisicao, resposta) {
 }
 
 
-app.post('/cadastrarPessoa', usuarioEstaAutenticado, cadastrarPessoa)
+app.post('/cadastrarPessoa', cadastrarPessoa)
 
-app.use('/listarPessoas', usuarioEstaAutenticado, (requisicao, resposta) => {
+app.use('/listarPessoas', (requisicao, resposta) => {
     resposta.write(`<!DOCTYPE html>
                     <html lang="en">
 
@@ -354,7 +354,7 @@ app.use('/listarPessoas', usuarioEstaAutenticado, (requisicao, resposta) => {
 
 var listaPets = [];
 
-app.post('/cadastrarPet', usuarioEstaAutenticado, (requisicao,resposta)=>{
+app.post('/cadastrarPet', (requisicao,resposta)=>{
     var nomePet = requisicao.body.nomePet;
     var raca = requisicao.body.raca;
     var idade = requisicao.body.idade;
@@ -489,7 +489,7 @@ app.post('/cadastrarPet', usuarioEstaAutenticado, (requisicao,resposta)=>{
 })
 
 
-app.use('/listarPets', usuarioEstaAutenticado, (requisicao, resposta) => {
+app.use('/listarPets', (requisicao, resposta) => {
     resposta.write(`<!DOCTYPE html>
                     <html lang="en">
 
@@ -590,7 +590,7 @@ app.use('/listarPets', usuarioEstaAutenticado, (requisicao, resposta) => {
 
 var listaDesejos = [];
 
-app.use('/desejo', usuarioEstaAutenticado, (requisicao, resposta)=>{
+app.use('/desejo', (requisicao, resposta)=>{
     resposta.write (`
                 <!DOCTYPE html>
                     <html lang="en">
@@ -691,7 +691,7 @@ app.use('/desejo', usuarioEstaAutenticado, (requisicao, resposta)=>{
     `)
 })
 
-app.post('/gravarDesejo', usuarioEstaAutenticado, gravarDesejo)
+app.post('/gravarDesejo', gravarDesejo)
 
 
 function gravarDesejo (requisicao,resposta) {
@@ -831,7 +831,7 @@ function gravarDesejo (requisicao,resposta) {
         }
 }
 
-app.use ('/listarInteresses', usuarioEstaAutenticado, (requisicao, resposta)=>{
+app.use ('/listarInteresses', (requisicao, resposta)=>{
     resposta.write (`
                     <!DOCTYPE html>
                     <html lang="en">
