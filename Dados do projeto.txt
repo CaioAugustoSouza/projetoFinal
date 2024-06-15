@@ -1,5 +1,8 @@
-Link projeto Vercel
-https://aula3ppi.vercel.app/
+Gitgub
+https://github.com/CaioAugustoSouza/projetoFinal
 
-Link projeto Github
-https://github.com/CaioAugustoSouza/aula3ppi
+Vercel:
+https://projeto-final-three-indol.vercel.app/login.html
+
+Vídeo youtube do sistema funcionando:
+https://youtu.be/UZ7npmFKkTE?si=TRMoSZme9OK0VMNR
