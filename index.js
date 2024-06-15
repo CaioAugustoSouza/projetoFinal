@@ -250,9 +250,9 @@ function cadastrarPessoa(requisicao, resposta) {
 }
 
 
-app.post('/cadastrarPessoa', cadastrarPessoa)
+app.post('/cadastrarPessoa', usuarioEstaAutenticado, cadastrarPessoa)
 
-app.use('/listarPessoas', (requisicao, resposta) => {
+app.use('/listarPessoas', usuarioEstaAutenticado, (requisicao, resposta) => {
     resposta.write(`<!DOCTYPE html>
                     <html lang="en">
 
@@ -354,7 +354,7 @@ app.use('/listarPessoas', (requisicao, resposta) => {
 
 var listaPets = [];
 
-app.post('/cadastrarPet', (requisicao,resposta)=>{
+app.post('/cadastrarPet', usuarioEstaAutenticado, (requisicao,resposta)=>{
     var nomePet = requisicao.body.nomePet;
     var raca = requisicao.body.raca;
     var idade = requisicao.body.idade;
@@ -489,7 +489,7 @@ app.post('/cadastrarPet', (requisicao,resposta)=>{
 })
 
 
-app.use('/listarPets', (requisicao, resposta) => {
+app.use('/listarPets', usuarioEstaAutenticado, (requisicao, resposta) => {
     resposta.write(`<!DOCTYPE html>
                     <html lang="en">
 
@@ -590,7 +590,7 @@ app.use('/listarPets', (requisicao, resposta) => {
 
 var listaDesejos = [];
 
-app.use('/desejo', (requisicao, resposta)=>{
+app.use('/desejo', usuarioEstaAutenticado, (requisicao, resposta)=>{
     resposta.write (`
                 <!DOCTYPE html>
                     <html lang="en">
@@ -691,7 +691,7 @@ app.use('/desejo', (requisicao, resposta)=>{
     `)
 })
 
-app.post('/gravarDesejo', gravarDesejo)
+app.post('/gravarDesejo', usuarioEstaAutenticado, gravarDesejo)
 
 
 function gravarDesejo (requisicao,resposta) {
@@ -831,7 +831,7 @@ function gravarDesejo (requisicao,resposta) {
         }
 }
 
-app.use ('/listarInteresses', (requisicao, resposta)=>{
+app.use ('/listarInteresses', usuarioEstaAutenticado, (requisicao, resposta)=>{
     resposta.write (`
                     <!DOCTYPE html>
                     <html lang="en">
