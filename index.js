@@ -711,7 +711,7 @@ function gravarDesejo (requisicao,resposta) {
             while (pessoaInteressada!=listaPessoas[u].nome && u<listaPessoas.length){
                 u++;
             }
-            if (j<listaPets.length){
+            if (j<listaPessoas.length){
                 var emailInteressado = listaPessoas[u].email;
                 var telefoneInteressado = listaPessoas[u].telefone;
             }
